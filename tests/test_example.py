@@ -181,12 +181,12 @@ class Test_Example(unittest.TestCase):
                 self.assertNotEqual(key.strip(),"",f"Пустой ключ:{key}")
 
     # Удаление ордера 
-    #def test_delete_order(self) ->None:
-    #   id = self.test_add_order_in_store()
-    #    url_del='https://petstore.swagger.io/v2/store/order/'+str(id)
-    #    headers_del = {"accept": "application/json"}
-    #    response_del = requests.delete(url_del)
-    #    self.assertEqual(response_del.status_code, 200)
+    def test_delete_order(self) ->None:
+        id = self.test_add_order_in_store()
+        url_del='https://petstore.swagger.io/v2/store/order/'+str(id)
+        headers_del = {"accept": "application/json"}
+        response_del = requests.delete(url_del)
+        self.assertEqual(response_del.status_code, 200)
 
 
 
