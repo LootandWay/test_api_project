@@ -83,7 +83,7 @@ class Test_Example(unittest.TestCase):
     # Протестировать заказ на питомца 
     def test_add_order_in_store(self) -> None:
         data = {
-            "id": 0,
+            "id": 2,
             "petId": 2323,
             "quantity": 3434,
             "shipDate": "2999-06-14T13:42:40.471Z",
@@ -180,9 +180,9 @@ class Test_Example(unittest.TestCase):
                 self.assertTrue(isinstance(value,int),f"Значение для ключа:'{key}' не является числом: '{value}'")
                 self.assertNotEqual(key.strip(),"",f"Пустой ключ:{key}")
 
-    # Удаление ордера 
+    # Удаление заказа по айди
     def test_delete_order(self) ->None:
-        id = self.test_add_order_in_store()
+        id = self.test_add_order_in_store(self)
         url_del='https://petstore.swagger.io/v2/store/order/'+str(id)
         headers_del = {"accept": "application/json"}
         response_del = requests.delete(url_del)
