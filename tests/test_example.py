@@ -83,7 +83,7 @@ class Test_Example(unittest.TestCase):
     # Протестировать заказ на питомца 
     def test_add_order_in_store(self) -> None:
         data = {
-            "id": 2,
+            "id": 5,
             "petId": 2323,
             "quantity": 3434,
             "shipDate": "2999-06-14T13:42:40.471Z",
@@ -190,21 +190,23 @@ class Test_Example(unittest.TestCase):
 
     # Тест создания пользователя
     def test_create_new_user(self) -> None:
-        url= "https://petstore.swagger.io/v2/user/createWithList"
+        url= 'https://petstore.swagger.io/v2/user'
         headers = {
             "accept": "application/json",
             "Content-Type": "application/json"}
-        data = {"id": 0,
-            "username": "BobMain",
-            "firstName": "Aleks",
-            "lastName": "Petrov",
-            "email": "dotaass@mail.ru",
-           "password": "zxc111",
-            "phone": "03",
-            "userStatus": 0 
+        data = {"id": 3,
+                "username": "BobMain",
+                "firstName": "Petr",
+                "lastName": "Petrov",
+                "email": "dotaass@mail.ru",
+                "password": "zxc111",
+                "phone": "string",
+                "userStatus": 0 
             }
         response = requests.post(url,headers=headers,json=data)
         self.assertEqual(response.status_code,200)
+        data = response.json()
+        print('\nОтвет на создание пользователя',data)
 
 
 # Инициализировать условный оператор для точечного запуска тестов.
