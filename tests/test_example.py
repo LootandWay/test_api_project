@@ -99,7 +99,6 @@ class Test_Example(unittest.TestCase):
         data= response.json()
         self.assertEqual(data['status'],'placed')
         self.assertEqual(data['complete'],True)
-        print("\n Айди ордера заказа:",data['id'])
         return (data['id'])
 
 
@@ -185,9 +184,27 @@ class Test_Example(unittest.TestCase):
         id = self.test_add_order_in_store()
         url_del='https://petstore.swagger.io/v2/store/order/'+str(id)
         headers_del = {"accept": "application/json"}
+        print("\n Айди ордера заказа:",self.test_add_order_in_store())
         response_del = requests.delete(url_del)
         self.assertEqual(response_del.status_code, 200)
 
+    # Тест создания пользователя
+    def test_create_new_user(self) -> None:
+        url= "https://petstore.swagger.io/v2/user/createWithList"
+        headers = {
+            "accept": "application/json",
+            "Content-Type": "application/json"}
+        data = {"id": 0,
+            "username": "BobMain",
+            "firstName": "Aleks",
+            "lastName": "Petrov",
+            "email": "dotaass@mail.ru",
+           "password": "zxc111",
+            "phone": "03",
+            "userStatus": 0 
+            }
+        response = requests.post(url,headers=headers,json=data)
+        self.assertEqual(response.status_code,200)
 
 
 # Инициализировать условный оператор для точечного запуска тестов.
