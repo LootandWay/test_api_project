@@ -1,8 +1,8 @@
-# `s300-api-test` 
+# `test-api-project` 
 
 ## Содержание
 
-- [`s300-api-test`](#s300-api-test)
+- [`test-api-project`](#test-api-project)
   - [Содержание](#содержание)
   - [Описание](#описание)
   - [FAQ](#faq)
@@ -14,7 +14,7 @@
 
 [Назад в содержание](#содержание)
 
-`s300-api-test` &ndash; проект по хранению API тестов для QA-отдела.
+`test-api-project` &ndash; проект по хранению API тестов .
 
 ## FAQ
 

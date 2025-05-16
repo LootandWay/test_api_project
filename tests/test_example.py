@@ -182,7 +182,7 @@ class Test_Example(unittest.TestCase):
 
     # Удаление заказа по айди
     def test_delete_order(self) ->None:
-        id = self.test_add_order_in_store(self)
+        id = self.test_add_order_in_store()
         url_del='https://petstore.swagger.io/v2/store/order/'+str(id)
         headers_del = {"accept": "application/json"}
         response_del = requests.delete(url_del)
